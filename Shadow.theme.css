@@ -7,7 +7,7 @@
  * @website https://github.com/SallahBoussettah/Shadow
  */
 /* IMPORT CSS */
-@import url("https://raw.githubusercontent.com/SallahBoussettah/Shadow/main/main.css");
+@import url("https://raw.githubusercontent.com/SallahBoussettah/Shadow/main/public/main.css");
 
 /* TRANSPARENCY OVERRIDES FOR BETTER BACKGROUND VISIBILITY */
 .theme-dark, .theme-darker, .theme-midnight {
@@ -35,7 +35,7 @@
   --streaming-color: #a55eea; /* streaming status - purple */
   --offline-color: #747d8c; /* offline status - muted gray */
   /* APP BACKGROUND */
-  --background-shading-percent: 60%; /* transparency level for overlay - lower = more visible background */
+  --background-shading-percent: 6%; /* transparency level for overlay - lower = more visible background */
   --background-image: url(https://raw.githubusercontent.com/SallahBoussettah/Shadow/main/assets/images/Sung-jin.png); /* Sung Jin-Woo wallpaper */
   --background-position: center; /* center the image */
   --background-size: cover; /* cover the entire background */
