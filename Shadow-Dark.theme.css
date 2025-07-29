@@ -28,12 +28,12 @@
   --offline-color: #6b7280; /* offline status - muted gray */
 
   /* APP BACKGROUND */
-  --background-shading-percent: 60%; /* transparency level for overlay */
+  --background-shading-percent: 6%; /* transparency level for overlay */
   --background-image: url(https://raw.githubusercontent.com/SallahBoussettah/Shadow/main/assets/images/Sung-Jin-dark.jpg); /* Dark Sung Jin-Woo wallpaper */
   --background-position: center; /* center the image */
   --background-size: cover; /* cover the entire background */
   --background-attachment: fixed; /* keep background fixed */
-  --background-filter: brightness(0.9) contrast(1.2) saturate(1.3); /* enhance the mystical effect */
+  --background-filter: brightness(1.1) contrast(1.3) saturate(1.4); /* enhanced visibility and vibrancy */
 
   /* USER POPOUT BACKGROUND */
   --user-popout-image: var(--background-image);
@@ -74,12 +74,12 @@
 .theme-dark,
 .theme-darker,
 .theme-midnight {
-  /* Background shading optimized for the purple/blue wallpaper */
-  --background-shading: rgba(15, 23, 42, 0.85); /* Deep slate with high opacity */
-  --card-shading: rgba(30, 27, 75, 0.6); /* Deep purple-blue */
-  --popout-shading: rgba(15, 23, 42, 0.9); /* Very dark slate */
-  --modal-shading: rgba(30, 27, 75, 0.8); /* Deep purple-blue */
-  --input-shading: rgba(30, 27, 75, 0.4); /* Lighter purple-blue */
+  /* Background shading optimized for maximum wallpaper visibility */
+  --background-shading: rgba(15, 23, 42, 0.4); /* Much more transparent - shows more background */
+  --card-shading: rgba(30, 27, 75, 0.3); /* More transparent UI elements */
+  --popout-shading: rgba(15, 23, 42, 0.6); /* More transparent popouts */
+  --modal-shading: rgba(30, 27, 75, 0.5); /* More transparent modals */
+  --input-shading: rgba(30, 27, 75, 0.25); /* More transparent input fields */
 
   /* Text colors optimized for the mystical wallpaper */
   --normal-text: #f8fafc; /* Almost white for maximum contrast */
