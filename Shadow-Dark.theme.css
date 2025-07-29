@@ -28,7 +28,7 @@
   --offline-color: #6b7280; /* offline status - muted gray */
 
   /* APP BACKGROUND */
-  --background-shading-percent: 80%; /* transparency level for overlay */
+  --background-shading-percent: 60%; /* transparency level for overlay */
   --background-image: url(https://raw.githubusercontent.com/SallahBoussettah/Shadow/main/assets/images/Sung-Jin-dark.jpg); /* Dark Sung Jin-Woo wallpaper */
   --background-position: center; /* center the image */
   --background-size: cover; /* cover the entire background */
