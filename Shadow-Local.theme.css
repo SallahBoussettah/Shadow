@@ -1,0 +1,304 @@
+/**
+ * @name Shadow (Local)
+ * @author SallahBoussettah
+ * @version 1.0.0
+ * @description A dark theme inspired by Solo Leveling's Sung Jin-Woo with transparent elements and red/orange accents
+ * @source https://github.com/SallahBoussettah/Shadow
+ * @website https://github.com/SallahBoussettah/Shadow
+ */
+
+/* EMBEDDED CSS - This version includes all styles inline for immediate use */
+/*! Shadow v1.0.0 by SallahBoussettah */
+
+/* Default Variables */
+:root {
+  /* Internal color calculations */
+  --hsl-main-color: var(--main-color);
+  --hsl-hover-color: var(--hover-color);
+  --hsl-success-color: var(--success-color);
+  --hsl-warning-color: var(--warning-color);
+  --hsl-danger-color: var(--danger-color);
+  --hsl-info-color: var(--info-color);
+  --hsl-online-color: var(--online-color);
+  --hsl-idle-color: var(--idle-color);
+  --hsl-dnd-color: var(--dnd-color);
+  --hsl-streaming-color: var(--streaming-color);
+  --hsl-offline-color: var(--offline-color);
+
+  /* Channel colors */
+  --hsl-channel-normal: var(--channel-normal);
+  --hsl-channel-muted: var(--channel-muted); 
+  --hsl-channel-hover: var(--channel-hover);
+  --hsl-channel-selected: var(--channel-selected);
+  --hsl-channel-selected-bg: var(--channel-selected-bg);
+  --hsl-channel-unread: var(--channel-unread);
+  --hsl-channel-unread-hover: var(--channel-unread-hover);
+
+  /* Font settings */
+  --font-primary: var(--main-font);
+  --font-display: var(--main-font);
+  --font-code: var(--code-font);
+
+  /* Focus color */
+  --focus-primary: var(--focus-color);
+
+  /* SHADOW THEME SETTINGS */
+  /* ACCENT COLORS - Inspired by the red/orange tones in the wallpaper */
+  --main-color: #ff4757; /* main accent color - vibrant red from the sky */
+  --hover-color: #ff3742; /* hover accent color - slightly darker red */
+  --success-color: #2ed573; /* success color - keep green for positive actions */
+  --danger-color: #ff4757; /* danger color - matches main accent */
+  --warning-color: #ffa502; /* warning color - orange from the wallpaper */
+  --info-color: #3742fa; /* info color - blue accent */
+  
+  /* STATUS COLORS */
+  --online-color: #2ed573; /* online status */
+  --idle-color: #ffa502; /* idle status - orange */
+  --dnd-color: #ff4757; /* dnd status - red */
+  --streaming-color: #a55eea; /* streaming status - purple */
+  --offline-color: #747d8c; /* offline status - muted gray */
+  
+  /* APP BACKGROUND - Using a working image URL for now */
+  --background-shading-percent: 85%; /* transparency level for overlay */
+  --background-image: url(https://i.imgur.com/YourImageHere.jpg); /* You'll need to upload your image to imgur or similar */
+  --background-position: center; /* center the image */
+  --background-size: cover; /* cover the entire background */
+  --background-attachment: fixed; /* keep background fixed */
+  --background-filter: brightness(0.8) contrast(1.1) saturate(1.2); /* enhance the dramatic effect */
+  
+  /* USER POPOUT BACKGROUND */
+  --user-popout-image: var(--background-image);
+  --user-popout-position: var(--background-position);
+  --user-popout-size: var(--background-size);
+  --user-popout-attachment: var(--background-attachment);
+  --user-popout-filter: var(--background-filter);
+  
+  /* USER MODAL BACKGROUND */
+  --user-modal-image: var(--background-image);
+  --user-modal-position: var(--background-position);
+  --user-modal-size: var(--background-size);
+  --user-modal-attachment: var(--background-attachment);
+  --user-modal-filter: var(--background-filter);
+  
+  /* HOME ICON - Using a simple SVG data URL */
+  --home-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 2L2 7v10c0 5.55 3.84 10 9 11 5.16-1 9-5.45 9-11V7l-10-5z' fill='%23ff4757' stroke='%23000' stroke-width='0.5' opacity='0.9'/%3E%3Cpath d='M12 6L6 9v6c0 3.33 2.31 6 5.4 6.6C14.49 21 17 18.33 17 15V9l-5-3z' fill='%23000' opacity='0.3'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23fff' opacity='0.8'/%3E%3C/svg%3E");
+  --home-size: cover;
+  
+  /* FONTS */
+  --main-font: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --code-font: "Fira Code", "Consolas", "Liberation Mono", Menlo, Courier, monospace;
+  
+  /* CHANNEL COLORS - Dark theme with red accents */
+  --channel-normal: #b8bcc8;
+  --channel-muted: #6c7086;
+  --channel-hover: #ff4757;
+  --channel-selected: #ff4757;
+  --channel-selected-bg: rgba(255, 71, 87, 0.2);
+  --channel-unread: #ff4757;
+  --channel-unread-hover: #ff3742;
+  
+  /* FOCUS COLOR */
+  --focus-color: var(--main-color);
+}
+
+/* Shadow Dark Theme */
+.theme-dark, .theme-darker, .theme-midnight {
+  /* Background shading for transparency effect */
+  --background-shading: rgba(0, 0, 0, 0.7);
+  --card-shading: rgba(0, 0, 0, 0.4);
+  --popout-shading: rgba(0, 0, 0, 0.8);
+  --modal-shading: rgba(0, 0, 0, 0.6);
+  --input-shading: rgba(0, 0, 0, 0.3);
+  
+  /* Text colors optimized for the dark wallpaper */
+  --normal-text: #ffffff;
+  --muted-text: #b8bcc8;
+  
+  /* Enhanced contrast for readability */
+  --text-default: #ffffff;
+  --text-muted: #b8bcc8;
+  --text-link: var(--main-color);
+  --text-brand: var(--main-color);
+  --text-feedback-positive: var(--success-color);
+  --text-danger: var(--danger-color);
+  
+  /* Internal shading variables */
+  --hsl-background-shading: var(--background-shading);
+  --hsl-card-shading: var(--card-shading);
+  --hsl-popout-shading: var(--popout-shading);
+  --hsl-modal-shading: var(--modal-shading);
+  --hsl-input-shading: var(--input-shading);
+  --hsl-input-border-shading: rgba(255, 71, 87, 0.1);
+}
+
+/* Light Theme Support */
+.theme-light {
+  --background-shading: rgba(255, 255, 255, 0.8);
+  --card-shading: rgba(255, 255, 255, 0.6);
+  --popout-shading: rgba(255, 255, 255, 0.9);
+  --modal-shading: rgba(255, 255, 255, 0.8);
+  --input-shading: rgba(0, 0, 0, 0.1);
+  
+  --normal-text: #2c2f33;
+  --muted-text: #72767d;
+  
+  --text-default: #2c2f33;
+  --text-muted: #72767d;
+  --text-link: var(--main-color);
+  --text-brand: var(--main-color);
+  --text-feedback-positive: var(--success-color);
+  --text-danger: var(--danger-color);
+  
+  /* Internal shading variables */
+  --hsl-background-shading: var(--background-shading);
+  --hsl-card-shading: var(--card-shading);
+  --hsl-popout-shading: var(--popout-shading);
+  --hsl-modal-shading: var(--modal-shading);
+  --hsl-input-shading: var(--input-shading);
+  --hsl-input-border-shading: rgba(255, 71, 87, 0.1);
+}
+
+/* ===== CORE TRANSPARENCY IMPLEMENTATION ===== */
+
+/* Transparent Background Implementation */
+html, body, .appMount__51fd7 {
+  background: none !important;
+}
+
+/* Main App Container - This creates the transparency effect */
+.app_a3002d {
+  background: var(--hsl-background-shading) !important;
+  color: transparent;
+}
+
+.app__160d8 {
+  background: rgba(0, 0, 0, calc(var(--background-shading-percent) * 0.001)) !important;
+}
+
+/* Background Image Layer */
+.bg__960e4 {
+  background: var(--background-image) var(--background-position) / var(--background-size) no-repeat !important;
+  background-attachment: var(--background-attachment) !important;
+  filter: var(--background-filter) !important;
+  z-index: -1 !important;
+}
+
+/* Loading Screen */
+.container_a2f514 {
+  background: var(--hsl-background-shading) !important;
+}
+
+/* Loading Animation - Shadow themed */
+.wanderingCubes__0b5bb .item__0b5bb {
+  background: var(--main-color) !important;
+}
+
+.path__0b5bb {
+  stroke: var(--main-color) !important;
+}
+
+/* Focus Ring */
+.focus-rings-ring {
+  box-shadow: 0 0 0 4px var(--focus-color) !important;
+}
+
+/* ===== TRANSPARENCY FOR UI ELEMENTS ===== */
+
+/* Chat Area */
+.chat_f75fb0, .chatContent_f75fb0, .scroller__28a87 {
+  background: var(--hsl-card-shading) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* Member List */
+.container_c8ffbb, .members_c8ffbb {
+  background: var(--hsl-card-shading) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Sidebar */
+.sidebar_a4d4d9 {
+  background: var(--hsl-card-shading) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+/* Message Input Area */
+.channelTextArea__74017 {
+  background: var(--hsl-input-shading) !important;
+  backdrop-filter: blur(5px) !important;
+  border: 1px solid rgba(255, 71, 87, 0.3) !important;
+}
+
+/* Modals */
+.root__49fc1 {
+  background: var(--hsl-modal-shading) !important;
+  backdrop-filter: blur(15px) !important;
+  border: 1px solid rgba(255, 71, 87, 0.2) !important;
+}
+
+/* ===== ACCENT COLOR APPLICATIONS ===== */
+
+/* Buttons */
+.lookFilled__201d5.colorBrand__201d5, .lookFilled__201d5.colorPrimary__201d5 {
+  background: var(--main-color) !important;
+}
+
+.lookFilled__201d5.colorBrand__201d5:hover, .lookFilled__201d5.colorPrimary__201d5:hover {
+  background: var(--hover-color) !important;
+}
+
+/* Links */
+.anchor_edefb8 {
+  color: var(--main-color) !important;
+}
+
+.anchor_edefb8:hover {
+  color: var(--hover-color) !important;
+}
+
+/* ===== TEXT READABILITY ENHANCEMENTS ===== */
+
+/* Enhanced text contrast for the dark wallpaper */
+.messageContent_c19a55 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+.username_c19a55 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Member list usernames */
+.username__703b9 {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* General text enhancement */
+.appMount__51fd7 h1, .appMount__51fd7 h2, .appMount__51fd7 h3, 
+.appMount__51fd7 h4, .appMount__51fd7 h5, .appMount__51fd7 h6 {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+}
+
+.appMount__51fd7 button {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ===== SCROLLBARS ===== */
+::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color) !important;
+  border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-color) !important;
+}
