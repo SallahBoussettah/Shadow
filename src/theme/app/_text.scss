@@ -1,0 +1,55 @@
+@use 'backend' as *;
+
+// FONT
+body,
+button,
+input,
+select,
+textarea,
+::placeholder {
+  font-family: cv('font.main');
+}
+
+// CODE
+code {
+  font-family: cv('font.code');
+}
+
+// SELECTION
+::selection {
+  background: cv('color.main');
+  color: cv('text.normal');
+}
+// SHADOW THEME: Enhanced text readability with shadows
+// Message content
+#{c(chat messageContent)} {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+// Usernames in messages
+#{c(chat chatUsername)} {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+// Member list usernames
+#{c(memberList usernameInner)} {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
+}
+
+// General text enhancement for better visibility
+#{c(main appMount)} {
+  // Enhance all text elements for better readability over the dark background
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+  }
+
+  // Button text
+  button {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
+  }
+}

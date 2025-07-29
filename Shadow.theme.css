@@ -1,0 +1,61 @@
+/**
+ * @name Shadow
+ * @author SallahBoussettah
+ * @version 1.0.0
+ * @description A dark theme inspired by Solo Leveling's Sung Jin-Woo with transparent elements and red/orange accents
+ * @source https://github.com/SallahBoussettah/Shadow
+ * @website https://github.com/SallahBoussettah/Shadow
+ */
+/* IMPORT CSS */
+@import url("https://raw.githubusercontent.com/SallahBoussettah/Shadow/main/main.css");
+/* SHADOW THEME SETTINGS */
+:root {
+  /* ACCENT COLORS - Inspired by the red/orange tones in the wallpaper */
+  --main-color: #ff4757; /* main accent color - vibrant red from the sky */
+  --hover-color: #ff3742; /* hover accent color - slightly darker red */
+  --success-color: #2ed573; /* success color - keep green for positive actions */
+  --danger-color: #ff4757; /* danger color - matches main accent */
+  --warning-color: #ffa502; /* warning color - orange from the wallpaper */
+  --info-color: #3742fa; /* info color - blue accent */
+  /* STATUS COLORS */
+  --online-color: #2ed573; /* online status */
+  --idle-color: #ffa502; /* idle status - orange */
+  --dnd-color: #ff4757; /* dnd status - red */
+  --streaming-color: #a55eea; /* streaming status - purple */
+  --offline-color: #747d8c; /* offline status - muted gray */
+  /* APP BACKGROUND */
+  --background-shading-percent: 85%; /* transparency level for overlay */
+  --background-image: url(https://raw.githubusercontent.com/SallahBoussettah/Shadow/main/assets/images/Sung-jin.png); /* Sung Jin-Woo wallpaper */
+  --background-position: center; /* center the image */
+  --background-size: cover; /* cover the entire background */
+  --background-attachment: fixed; /* keep background fixed */
+  --background-filter: brightness(0.8) contrast(1.1) saturate(1.2); /* enhance the dramatic effect */
+  /* USER POPOUT BACKGROUND */
+  --user-popout-image: var(--background-image);
+  --user-popout-position: var(--background-position);
+  --user-popout-size: var(--background-size);
+  --user-popout-attachment: var(--background-attachment);
+  --user-popout-filter: var(--background-filter);
+  /* USER MODAL BACKGROUND */
+  --user-modal-image: var(--background-image);
+  --user-modal-position: var(--background-position);
+  --user-modal-size: var(--background-size);
+  --user-modal-attachment: var(--background-attachment);
+  --user-modal-filter: var(--background-filter);
+  /* HOME ICON */
+  --home-icon: url(https://raw.githubusercontent.com/SallahBoussettah/Shadow/main/assets/icons/shadow-home.svg);
+  --home-size: cover;
+  /* FONTS */
+  --main-font: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --code-font: "Fira Code", "Consolas", "Liberation Mono", Menlo, Courier, monospace;
+  /* CHANNEL COLORS - Dark theme with red accents */
+  --channel-normal: #b8bcc8;
+  --channel-muted: #6c7086;
+  --channel-hover: #ff4757;
+  --channel-selected: #ff4757;
+  --channel-selected-bg: rgba(255, 71, 87, 0.2);
+  --channel-unread: #ff4757;
+  --channel-unread-hover: #ff3742;
+  /* FOCUS COLOR */
+  --focus-color: var(--main-color);
+}

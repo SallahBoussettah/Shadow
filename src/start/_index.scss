@@ -1,0 +1,15 @@
+// These get left in a nice, neat location.
+$version: '1.0.0';
+$themeName: 'Shadow';
+$author: 'SallahBoussettah';
+$desc: 'A dark theme inspired by Solo Leveling';
+$desc_bd: 'for BetterDiscord.'; // BetterDiscord will use the default preset.
+$desc_vc: 'for Vencord.'; // Vencord will use the default preset.
+$desc_generic: 'for BetterDiscord and Vencord.'; // "Generic" to be used for preset distributables.
+$src: 'https://github.com/SallahBoussettah/Shadow';
+$website: 'https://raw.githubusercontent.com/SallahBoussettah/Shadow/main'; // also css @import host
+$invite: 'dHaSxn3';
+
+$main_import: 'main.css'; // Base import filename
+$bd_import: 'betterdiscord.css'; // BetterDiscord's import filename
+$vc_import: 'vencord.css'; // Vencord's import filename

@@ -1,0 +1,166 @@
+@use 'start' as *;
+/*! ClearVision v#{$version} by #{$author} */
+
+// Import Functions, Variables, Mixins and Class list functionality.
+@use 'backend' as *;
+
+// Contains the theme proper.
+@use 'theme';
+
+/* Default Variables */
+$sf: var(--saturation-factor, 1);
+$calc: h calc(#{$sf} * s) l / alpha; // avoid repetition
+// DO NOT DISTRIBUTE THESE; BACKEND ONLY STUFF.
+:is(#{c(main themeLight)}, #{c(main themeDark)}, #{c(main themeDarker)}, #{c(main themeMidnight)}) {
+  &,
+  &:is(#{c(main themeLight)}, #{c(main themeDark)}) {
+    // DO NOT EDIT THESE -- VARIABLES ARE NOT TO BE DISTRIBUTED TO END USER.
+    --text-default: hsl(from var(--normal-text) #{$calc});
+    --text-muted: hsl(from var(--muted-text) #{$calc});
+    --text-link: var(--hsl-main-color);
+    --text-brand: var(--hsl-main-color);
+    --text-feedback-positive: var(--hsl-success-color);
+    --text-danger: var(--hsl-danger-color);
+    
+    // shadings are defined in .theme-dark/.theme-light -- turns out every color variable discord uses also uses saturation-factor.
+    --hsl-background-shading: hsl(from var(--background-shading) #{$calc});
+    --hsl-card-shading: hsl(from var(--card-shading) #{$calc});
+    --hsl-popout-shading: hsl(from var(--popout-shading) #{$calc});
+    --hsl-modal-shading: hsl(from var(--modal-shading) #{$calc});
+    --hsl-input-shading: hsl(from var(--input-shading) #{$calc});
+    --hsl-input-border-shading: hsl(from var(--hsl-input-shading) h s l/.1);
+  }
+}
+:root {
+  // DO NOT EDIT THESE -- VARIABLES ARE NOT TO BE DISTRIBUTED TO END USER.
+  // generic colors
+  --hsl-main-color: hsl(from var(--main-color) #{$calc});
+  --hsl-hover-color: hsl(from var(--hover-color) #{$calc});
+  --hsl-success-color: hsl(from var(--success-color) #{$calc});
+  --hsl-warning-color: hsl(from var(--warning-color) #{$calc});
+  --hsl-danger-color: hsl(from var(--danger-color) #{$calc});
+  --hsl-info-color: hsl(from var(--info-color) #{$calc});
+  --hsl-online-color: hsl(from var(--online-color) #{$calc});
+  --hsl-idle-color: hsl(from var(--idle-color) #{$calc});
+  --hsl-dnd-color: hsl(from var(--dnd-color) #{$calc});
+  --hsl-streaming-color: hsl(from var(--streaming-color) #{$calc});
+  --hsl-offline-color: hsl(from var(--offline-color) #{$calc});
+
+  --hsl-channel-normal: var(--channel-normal);
+  --hsl-channel-muted: var(--channel-muted); 
+  --hsl-channel-hover: var(--channel-hover);
+  --hsl-channel-selected: var(--channel-selected);
+  --hsl-channel-selected-bg: var(--channel-selected-bg);
+  --hsl-channel-unread: var(--channel-unread);
+  --hsl-channel-unread-hover: var(--channel-unread-hover);
+
+  // fonts
+  --font-primary: var(--main-font);
+  --font-display: var(--main-font);
+  --font-code: var(--code-font);
+
+  --focus-primary: var(--focus-color);
+
+  // other stuff that the theme sets
+
+  // THESE VARIABLES ARE TO BE EDITED BY THE END USER
+  --main-color: #ff4757;
+  --hover-color: #ff3742;
+  --success-color: #2ed573;
+  --warning-color: #ffa502;
+  --danger-color: #ff4757;
+  --info-color: #3742fa;
+  --online-color: #2ed573;
+  --idle-color: #ffa502;
+  --dnd-color: #ff4757;
+  --streaming-color: #a55eea;
+  --offline-color: #747d8c;
+
+  --background-shading-percent: 85%;
+  --background-image: url(https://raw.githubusercontent.com/SallahBoussettah/Shadow/main/assets/images/Sung-jin.png);
+  --background-position: center;
+  --background-size: cover;
+  --background-attachment: fixed;
+  --background-filter: brightness(0.8) contrast(1.1) saturate(1.2);
+
+  --user-popout-image: var(--background-image);
+  --user-popout-position: var(--background-position);
+  --user-popout-size:  var(--background-size);
+  --user-popout-attachment: var(--background-attachment);
+  --user-popout-filter: var(--background-filter);
+
+  --user-modal-image: var(--background-image);
+  --user-modal-position: var(--background-position);
+  --user-modal-size: var(--background-size);
+  --user-modal-attachment: var(--background-attachment);
+  --user-modal-filter: var(--background-filter);
+
+  --home-icon: url(https://raw.githubusercontent.com/SallahBoussettah/Shadow/main/assets/icons/shadow-home.svg);
+  --home-size: cover;
+
+  --main-font: 'gg sans', Whitney, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --code-font: Consolas, 'gg mono', 'Liberation Mono', Menlo, Courier, monospace;
+
+  --channel-normal: var(--interactive-normal);
+  --channel-muted: var(--interactive-muted); 
+  --channel-hover: var(--interactive-hover);
+  --channel-selected: var(--interactive-active);
+  --channel-selected-bg: var(--main-color);
+  --channel-unread: var(--main-color);
+  --channel-unread-hover: var(--hover-color);
+
+  --focus-color: var(--main-color);
+}
+
+/* Light Theme */
+// overides discord defaults
+:is(#{c(main themeLight)}, #{c(main themeDark)} #{c(main themeLight)}) {
+  // THESE VARIABLES ARE TO BE EDITED BY THE END USER
+  --background-shading: rgba(252, 252, 252, 0.3);
+  --card-shading: rgba(252, 252, 252, 0.3);
+  --popout-shading: rgba(252, 252, 252, 0.7);
+  --modal-shading: rgba(252, 252, 252, 0.5);
+  --input-shading: rgba(0, 0, 0, 0.3);
+  // ALSO EDITABLE
+  --normal-text: #36363c;
+  --muted-text: #75757e;
+}
+
+/* Shadow Dark Theme */
+:is(#{c(main themeDark)}, #{c(main themeLight)} #{c(main themeDark)}) {
+  // THESE VARIABLES ARE TO BE EDITED BY THE END USER
+  --background-shading: rgba(0, 0, 0, 0.7);
+  --card-shading: rgba(0, 0, 0, 0.4);
+  --popout-shading: rgba(0, 0, 0, 0.8);
+  --modal-shading: rgba(0, 0, 0, 0.6);
+  --input-shading: rgba(0, 0, 0, 0.3);
+  // ALSO EDITABLE
+  --normal-text: #ffffff;
+  --muted-text: #b8bcc8;
+}
+
+/* Shadow Darker Theme */
+:is(#{c(main themeDarker)}, #{c(main themeLight)} #{c(main themeDarker)}) {
+  // THESE VARIABLES ARE TO BE EDITED BY THE END USER
+  --background-shading: rgba(0, 0, 0, 0.8);
+  --card-shading: rgba(0, 0, 0, 0.5);
+  --popout-shading: rgba(0, 0, 0, 0.85);
+  --modal-shading: rgba(0, 0, 0, 0.7);
+  --input-shading: rgba(0, 0, 0, 0.4);
+  // ALSO EDITABLE
+  --normal-text: #ffffff;
+  --muted-text: #b8bcc8;
+}
+
+/* Shadow Midnight Theme */
+:is(#{c(main themeMidnight)}, #{c(main themeLight)} #{c(main themeMidnight)}) {
+  // THESE VARIABLES ARE TO BE EDITED BY THE END USER
+  --background-shading: rgba(0, 0, 0, 0.9);
+  --card-shading: rgba(0, 0, 0, 0.6);
+  --popout-shading: rgba(0, 0, 0, 0.9);
+  --modal-shading: rgba(0, 0, 0, 0.8);
+  --input-shading: rgba(0, 0, 0, 0.5);
+  // ALSO EDITABLE
+  --normal-text: #ffffff;
+  --muted-text: #b8bcc8;
+}

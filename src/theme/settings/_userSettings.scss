@@ -1,0 +1,222 @@
+@use 'backend' as *;
+
+// SIDEBAR
+#{c(userSettings sidebar nitroBackgroundSelected)} {
+  background: transparent;
+}
+
+// ACCOUNT
+#{c(userSettings account profileCard)} {
+  background: cv('shading.card');
+}
+#{c(userSettings account badgeList)},
+#{c(userSettings account fieldBackground)},
+#{c(userSettings account fieldList)} {
+  background: transparent;
+}
+
+// ACCOUNT STANDING
+#{c(userSettings account standing container)},
+#{c(userSettings account standing avatarBackground)} {
+  background: transparent;
+}
+
+// PROFILES
+#{c(userSettings profiles uploadImageOption)} {
+  background: cv('shading.cardInner');
+  &:hover {
+    border: 2px solid cv('color.main');
+  }
+}
+
+// CONTENT & SOCIAL
+#{c(userSettings content blockedCard)} {
+  background: cv('shading.card');
+}
+#{c(userSettings content blockedHeader)} {
+  background: transparent;
+}
+
+// FAMILY CENTER
+#{c(userSettings family box)} {
+  background: cv('shading.card');
+  border: none;
+}
+#{c(userSettings family row)} {
+  background: cv('shading.cardInner');
+  border: none;
+}
+
+// AUTHORISED APPS
+#{c(userSettings authedApps app)} {
+  background: cv('shading.card');
+}
+#{c(userSettings authedApps header)} {
+  background: transparent;
+}
+#{c(userSettings authedApps detailsContainer)} {
+  background: transparent;
+  #{c(userSettings authedApps detailsSection)} {
+    background: cv('shading.cardInner');
+    padding: 16px;
+    &:active {
+      background: cv('shading.cardInner');
+    }
+    &:first-child {
+      border-radius: 8px 8px 0 0;
+    }
+    &:nth-child(2) {
+      border-radius: 0 0 8px 8px;
+    }
+  }
+}
+#{c(userSettings authedApps actionMenuButton)} {
+  background: cv('shading.cardInner');
+}
+
+// DEVICES
+#{c(userSettings devices sessionIcon)} {
+  background: cv('color.main');
+  color: var(--header-primary);
+}
+
+// CONNECTIONS
+#{c(userSettings connections connectContainer)},
+#{c(userSettings connections connection)} {
+  background: cv('shading.card');
+}
+#{c(userSettings connections connectionsContainer)} {
+  justify-content: center;
+}
+#{c(userSettings connections accountButtonInner)},
+#{c(userSettings connections modal accountButtonInner)} {
+  background-color: cv('shading.cardInner');
+  border: 2px solid transparent;
+  &:hover {
+    background-color: cv('shading.hover');
+    border-color: cv('color.main');
+  }
+}
+#{c(userSettings connections connectionHeader)} {
+  background: transparent;
+  padding-bottom: 0;
+}
+#{c(userSettings connections connectionMetadataContainer)} {
+  background-color: cv('shading.cardInner');
+}
+
+// NITRO - NO NITRO
+#{c(userSettings nitro perkCard)} {
+  background: cv('shading.card');
+}
+#{c(userSettings nitro footerWrapperBase)} {
+  background: cv('shading.popout');
+}
+#{c(userSettings nitro footerSubButton)} {
+  color: cv('color.main') !important; // discord styles
+}
+#{c(userSettings nitro footerGiftButton)} {
+  &:hover {
+    background: transparent;
+  }
+}
+// NITRO - WITH NITRO
+#{c(userSettings nitro giftCard)} {
+  background: cv('shading.card');
+}
+
+// SERVER BOOST
+#{c(userSettings boost guildContainer)},
+#{c(userSettings boost boostContainer)} {
+  background: cv('shading.card');
+}
+#{c(userSettings boost appliedBoostContainer)} {
+  background: transparent;
+}
+
+// SUBSCRIPTIONS
+#{c(userSettings subscriptions detailsBlock)} {
+  background: cv('shading.card');
+}
+
+// BILLING
+#{c(userSettings billing paymentPane)} {
+  background: cv('shading.card');
+}
+#{c(userSettings billing paginator)},
+#{c(userSettings billing payment)} {
+  background: transparent;
+}
+#{c(userSettings billing expandedInfo)} {
+  background: cv('shading.cardInner');
+}
+:is(#{c(main themeLight)}, #{c(main themeDark)}) {
+  #{c(userSettings billing hoverablePayment)} {
+    &:hover {
+      background: transparent;
+    }
+  }
+  #{c(userSettings billing bottomDivider)} {
+    border-bottom-color: cv('shading.hover');
+  }
+  #{c(userSettings billing codeRedemptionRedirect)} {
+    background: cv('shading.card');
+    border: none;
+  }
+}
+
+// APPEARANCE
+
+// VOICE & VIDEO
+#{c(userSettings voice notchesContainer)} {
+  mask-image: url(https://clearvision.github.io/icons/pill.svg);
+  background: cv('color.main') !important; // inline
+}
+:is(#{c(main themeLight)}, #{c(main themeDark)}) {
+  #{c(userSettings voice notchprogress)} {
+    background: cv('shading.bg');
+  }
+}
+#{c(userSettings voice notches)} {
+  display: none;
+}
+:is(#{c(main themeLight)}, #{c(main themeDark)}) {
+  #{c(userSettings voice sensitivityBar)} {
+    background-color: cv('shading.cardInner');
+  }
+}
+#{c(userSettings voice soundButton)} {
+  background: cv('shading.card');
+}
+#{c(userSettings voice cameraWrapper)} {
+  background: cv('shading.card');
+  border: none;
+}
+#{c(userSettings voice backgroundOptionRing)} {
+  border: 2px solid cv('color.main');
+}
+
+// REGISTERED GAMES
+#{c(userSettings games notDetected)} {
+  background: cv('shading.card');
+}
+#{c(userSettings games nowPlaying)} {
+  background: hsl(from ('color.success') h s l/.8) ;
+}
+#{c(userSettings games addGamePopout)} {
+  background: cv('shading.popout');
+  box-shadow: none;
+}
+:is(#{c(main themeLight)}, html:not(#{c(main themeDark)})) {
+  #{c(userSettings games game)} {
+    box-shadow: 0 1px 0 0 cv('shading.hover');
+  }
+}
+
+// OVERLAY
+#{c(userSettings overlay expandedContainer)},
+#{c(userSettings overlay groupHeader)},
+#{c(userSettings overlay groupCollapsedContainer)},
+#{c(userSettings overlay groupContainer)}  {
+  background: transparent;
+}
