@@ -1,0 +1,341 @@
+/**
+ * @name Shadow Dark (Local)
+ * @author SallahBoussettah
+ * @version 1.0.0
+ * @description A mystical dark theme inspired by Solo Leveling's Sung Jin-Woo with purple/blue magical tones and red accents
+ * @source https://github.com/SallahBoussettah/Shadow
+ * @website https://github.com/SallahBoussettah/Shadow
+ */
+
+/* EMBEDDED CSS - This version includes all styles inline for immediate use */
+/*! Shadow Dark v1.0.0 by SallahBoussettah */
+
+/* Default Variables */
+:root {
+  /* SHADOW DARK THEME SETTINGS */
+  /* ACCENT COLORS - Inspired by the purple/blue magical tones with red accents */
+  --main-color: #8b5cf6; /* main accent color - bright purple from the magical energy */
+  --hover-color: #7c3aed; /* hover accent color - deeper purple */
+  --success-color: #10b981; /* success color - emerald green for contrast */
+  --danger-color: #dc2626; /* danger color - crimson red from the sky */
+  --warning-color: #f59e0b; /* warning color - amber for visibility */
+  --info-color: #3b82f6; /* info color - electric blue from the energy */
+  
+  /* STATUS COLORS */
+  --online-color: #10b981; /* online status - emerald */
+  --idle-color: #f59e0b; /* idle status - amber */
+  --dnd-color: #dc2626; /* dnd status - crimson */
+  --streaming-color: #8b5cf6; /* streaming status - main purple */
+  --offline-color: #6b7280; /* offline status - muted gray */
+  
+  /* APP BACKGROUND - Using base64 encoded placeholder for immediate use */
+  --background-shading-percent: 80%; /* transparency level for overlay */
+  --background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyMCIgaGVpZ2h0PSIxMDgwIiB2aWV3Qm94PSIwIDAgMTkyMCAxMDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZGVmcz4KPHN0eWxlPgouYmFja2dyb3VuZCB7CiAgZmlsbDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgIzFmMTMzNSwgIzMxMjc3NSwgIzRjMWQ5NSwgIzZkMjhkOSk7Cn0KPHN0eWxlPgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIxOTIwIiBoZWlnaHQ9IjEwODAiIGNsYXNzPSJiYWNrZ3JvdW5kIi8+Cjx0ZXh0IHg9Ijk2MCIgeT0iNTQwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOGI1Y2Y2IiBmb250LXNpemU9IjQ4IiBmb250LWZhbWlseT0iQXJpYWwiPkRhcmsgU2hhZG93IFRoZW1lPC90ZXh0Pgo8L3N2Zz4K); /* Placeholder - replace with your image URL */
+  --background-position: center; /* center the image */
+  --background-size: cover; /* cover the entire background */
+  --background-attachment: fixed; /* keep background fixed */
+  --background-filter: brightness(0.9) contrast(1.2) saturate(1.3); /* enhance the mystical effect */
+  
+  /* USER POPOUT BACKGROUND */
+  --user-popout-image: var(--background-image);
+  --user-popout-position: var(--background-position);
+  --user-popout-size: var(--background-size);
+  --user-popout-attachment: var(--background-attachment);
+  --user-popout-filter: var(--background-filter);
+  
+  /* USER MODAL BACKGROUND */
+  --user-modal-image: var(--background-image);
+  --user-modal-position: var(--background-position);
+  --user-modal-size: var(--background-size);
+  --user-modal-attachment: var(--background-attachment);
+  --user-modal-filter: var(--background-filter);
+  
+  /* HOME ICON - Purple themed */
+  --home-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cdefs%3E%3ClinearGradient id='shadowGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%238b5cf6;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%237c3aed;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 2L2 7v10c0 5.55 3.84 10 9 11 5.16-1 9-5.45 9-11V7l-10-5z' fill='url(%23shadowGradient)' stroke='%23000' stroke-width='0.5' opacity='0.9'/%3E%3Cpath d='M12 6L6 9v6c0 3.33 2.31 6 5.4 6.6C14.49 21 17 18.33 17 15V9l-5-3z' fill='%23000' opacity='0.3'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23fff' opacity='0.8'/%3E%3C/svg%3E");
+  --home-size: cover;
+  
+  /* FONTS */
+  --main-font: "gg sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --code-font: "Fira Code", "Consolas", "Liberation Mono", Menlo, Courier, monospace;
+  
+  /* FOCUS COLOR */
+  --focus-color: var(--main-color);
+  
+  /* Magical glow effects */
+  --magical-glow: 0 0 10px rgba(139, 92, 246, 0.5);
+  --magical-glow-hover: 0 0 15px rgba(124, 58, 237, 0.7);
+  --energy-glow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+/* Enhanced Dark Theme Colors for the mystical wallpaper */
+.theme-dark, .theme-darker, .theme-midnight {
+  /* Background shading optimized for the purple/blue wallpaper */
+  --background-shading: rgba(15, 23, 42, 0.85); /* Deep slate with high opacity */
+  --card-shading: rgba(30, 27, 75, 0.6); /* Deep purple-blue */
+  --popout-shading: rgba(15, 23, 42, 0.9); /* Very dark slate */
+  --modal-shading: rgba(30, 27, 75, 0.8); /* Deep purple-blue */
+  --input-shading: rgba(30, 27, 75, 0.4); /* Lighter purple-blue */
+  
+  /* Text colors optimized for the mystical wallpaper */
+  --normal-text: #f8fafc; /* Almost white for maximum contrast */
+  --muted-text: #cbd5e1; /* Light slate for muted text */
+  
+  /* Enhanced contrast for readability */
+  --text-default: #f8fafc;
+  --text-muted: #cbd5e1;
+  --text-link: var(--main-color);
+  --text-brand: var(--main-color);
+  --text-feedback-positive: var(--success-color);
+  --text-danger: var(--danger-color);
+}
+
+/* Light Theme Support */
+.theme-light {
+  --background-shading: rgba(255, 255, 255, 0.8);
+  --card-shading: rgba(255, 255, 255, 0.6);
+  --popout-shading: rgba(255, 255, 255, 0.9);
+  --modal-shading: rgba(255, 255, 255, 0.8);
+  --input-shading: rgba(0, 0, 0, 0.1);
+  
+  --normal-text: #2c2f33;
+  --muted-text: #72767d;
+  
+  --text-default: #2c2f33;
+  --text-muted: #72767d;
+  --text-link: var(--main-color);
+  --text-brand: var(--main-color);
+  --text-feedback-positive: var(--success-color);
+  --text-danger: var(--danger-color);
+}
+
+/* ===== CORE TRANSPARENCY IMPLEMENTATION ===== */
+
+/* Transparent Background Implementation */
+html, body, .appMount__51fd7 {
+  background: none !important;
+}
+
+/* Main App Container - This creates the transparency effect */
+.app_a3002d {
+  background: var(--background-shading) !important;
+  color: transparent;
+}
+
+.app__160d8 {
+  background: rgba(15, 23, 42, calc(var(--background-shading-percent) * 0.001)) !important;
+}
+
+/* Background Image Layer */
+.bg__960e4 {
+  background: var(--background-image) var(--background-position) / var(--background-size) no-repeat !important;
+  background-attachment: var(--background-attachment) !important;
+  filter: var(--background-filter) !important;
+  z-index: -1 !important;
+}
+
+/* Loading Screen */
+.container_a2f514 {
+  background: var(--background-shading) !important;
+}
+
+/* Loading Animation - Magical themed */
+.wanderingCubes__0b5bb .item__0b5bb {
+  background: var(--main-color) !important;
+  box-shadow: var(--magical-glow) !important;
+}
+
+.path__0b5bb {
+  stroke: var(--main-color) !important;
+  filter: drop-shadow(var(--magical-glow)) !important;
+}
+
+/* Focus Ring */
+.focus-rings-ring {
+  box-shadow: 0 0 0 4px var(--focus-color), var(--magical-glow) !important;
+}
+
+/* ===== TRANSPARENCY FOR UI ELEMENTS ===== */
+
+/* Chat Area */
+.chat_f75fb0, .chatContent_f75fb0, .scroller__28a87 {
+  background: var(--card-shading) !important;
+  backdrop-filter: blur(12px) !important;
+  border-radius: 8px !important;
+}
+
+/* Member List */
+.container_c8ffbb, .members_c8ffbb {
+  background: var(--card-shading) !important;
+  backdrop-filter: blur(12px) !important;
+  border-radius: 8px !important;
+}
+
+/* Sidebar */
+.sidebar_a4d4d9 {
+  background: var(--card-shading) !important;
+  backdrop-filter: blur(12px) !important;
+  border-radius: 8px !important;
+}
+
+/* Message Input Area */
+.channelTextArea__74017 {
+  background: var(--input-shading) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 2px solid rgba(139, 92, 246, 0.3) !important;
+  border-radius: 8px !important;
+}
+
+.channelTextArea__74017:focus-within {
+  border-color: var(--main-color) !important;
+  box-shadow: var(--magical-glow) !important;
+}
+
+/* Modals */
+.root__49fc1 {
+  background: var(--modal-shading) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 2px solid rgba(139, 92, 246, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), var(--magical-glow) !important;
+}
+
+/* ===== MAGICAL ACCENT COLOR APPLICATIONS ===== */
+
+/* Enhanced magical buttons */
+.lookFilled__201d5.colorBrand__201d5, .lookFilled__201d5.colorPrimary__201d5 {
+  background: linear-gradient(135deg, var(--main-color), var(--hover-color)) !important;
+  box-shadow: var(--magical-glow) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.lookFilled__201d5.colorBrand__201d5:hover, .lookFilled__201d5.colorPrimary__201d5:hover {
+  background: linear-gradient(135deg, var(--hover-color), #6d28d9) !important;
+  box-shadow: var(--magical-glow-hover) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Magical links */
+.anchor_edefb8 {
+  color: var(--main-color) !important;
+  text-shadow: 0 0 4px rgba(139, 92, 246, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.anchor_edefb8:hover {
+  color: var(--hover-color) !important;
+  text-shadow: 0 0 8px rgba(124, 58, 237, 0.5) !important;
+}
+
+/* Magical scrollbars */
+::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3) !important;
+  border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--main-color), var(--hover-color)) !important;
+  border-radius: 6px !important;
+  box-shadow: var(--magical-glow) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--hover-color), #6d28d9) !important;
+  box-shadow: var(--magical-glow-hover) !important;
+}
+
+/* ===== MAGICAL TEXT READABILITY ENHANCEMENTS ===== */
+
+/* Enhanced text contrast with magical glow */
+.messageContent_c19a55 {
+  color: #f8fafc !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(139, 92, 246, 0.3) !important;
+}
+
+.username_c19a55 {
+  color: #f8fafc !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 6px rgba(139, 92, 246, 0.4) !important;
+}
+
+/* Member list usernames */
+.username__703b9 {
+  color: #f8fafc !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 6px rgba(139, 92, 246, 0.4) !important;
+}
+
+/* Enhanced headers with magical glow */
+.appMount__51fd7 h1, .appMount__51fd7 h2, .appMount__51fd7 h3, 
+.appMount__51fd7 h4, .appMount__51fd7 h5, .appMount__51fd7 h6 {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9), 0 0 12px rgba(139, 92, 246, 0.5) !important;
+}
+
+.appMount__51fd7 button {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 0 4px rgba(139, 92, 246, 0.2) !important;
+}
+
+/* ===== MAGICAL STATUS INDICATORS ===== */
+
+.status_b2ca13[data-status="online"] {
+  background: var(--online-color) !important;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6) !important;
+}
+
+.status_b2ca13[data-status="dnd"] {
+  background: var(--danger-color) !important;
+  box-shadow: 0 0 6px rgba(220, 38, 38, 0.6) !important;
+}
+
+.status_b2ca13[data-status="idle"] {
+  background: var(--warning-color) !important;
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.6) !important;
+}
+
+.status_b2ca13[data-status="streaming"] {
+  background: var(--main-color) !important;
+  box-shadow: var(--magical-glow) !important;
+}
+
+/* ===== MAGICAL UNREAD INDICATORS ===== */
+
+.unread_f5ec8e {
+  background: var(--main-color) !important;
+  box-shadow: var(--magical-glow) !important;
+  animation: magical-pulse 2s infinite !important;
+}
+
+@keyframes magical-pulse {
+  0%, 100% { 
+    box-shadow: var(--magical-glow);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: var(--magical-glow-hover);
+    transform: scale(1.05);
+  }
+}
+
+/* ===== ENHANCED MEMBER LIST ===== */
+
+.member__5d473 .nameContainer__703b9:after {
+  background: linear-gradient(to right, var(--main-color) 90%, transparent) !important;
+  box-shadow: var(--magical-glow) !important;
+}
+
+.selected__91a9d .nameContainer__703b9 {
+  color: #f8fafc !important;
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.6) !important;
+}
+
+/* ===== MAGICAL POPOUTS ===== */
+
+.popout_c5b389 {
+  background: var(--popout-shading) !important;
+  backdrop-filter: blur(15px) !important;
+  border: 2px solid rgba(139, 92, 246, 0.3) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), var(--magical-glow) !important;
+}
