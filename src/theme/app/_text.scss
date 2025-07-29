@@ -20,39 +20,36 @@ code {
   background: cv('color.main');
   color: cv('text.normal');
 }
-// SHADOW THEME: Enhanced text readability with magical shadows
-// Message content with magical glow
+// SHADOW THEME: Enhanced text readability with shadows
+// Message content
 #{c(chat messageContent)} {
-  color: #f8fafc !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 8px rgba(139, 92, 246, 0.3) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
 }
 
-// Usernames in messages with magical glow
+// Usernames in messages
 #{c(chat chatUsername)} {
-  color: #f8fafc !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 6px rgba(139, 92, 246, 0.4) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
 }
 
-// Member list usernames with magical glow
+// Member list usernames
 #{c(memberList usernameInner)} {
-  color: #f8fafc !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 0 0 6px rgba(139, 92, 246, 0.4) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8) !important;
 }
 
-// General text enhancement for better visibility with magical effects
+// General text enhancement for better visibility
 #{c(main appMount)} {
-  // Enhance all text elements for better readability over the mystical background
+  // Enhance all text elements for better readability over the dark background
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9), 0 0 12px rgba(139, 92, 246, 0.5) !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9) !important;
   }
 
-  // Button text with subtle glow
+  // Button text
   button {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 0 4px rgba(139, 92, 246, 0.2) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
   }
 }
